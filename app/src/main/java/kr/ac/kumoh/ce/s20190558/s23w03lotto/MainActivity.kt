@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import kr.ac.kumoh.ce.s20190558.s23w03lotto.databinding.ActivityMainBinding
-import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     private lateinit var main: ActivityMainBinding
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         model.numbers.observe(this, Observer {
             txtNum.forEachIndexed{ index, textView ->
-                // NULL값이 절대로 안들어간다고 생각하면 !!추가 (NULL일리가 없다)
+                /* NULL값이 절대로 안들어간다고 생각하면 !!추가 (NULL일리가 없다) */
                 textView?.text = model.numbers.value!![index].toString()
             }
         })
